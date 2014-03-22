@@ -1,0 +1,12 @@
+<h1><%= @container.name %></h1>
+
+<code><%= @things %></code>
+
+<p>
+  <%= default_button("Back", containers_path) %>
+  <%= stop_start_button(@container) %>
+</p>
+
+<p>
+  State: <b><%= @container.state %></b>
+</p>

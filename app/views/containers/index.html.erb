@@ -1,0 +1,15 @@
+<h1>Containers</h1>
+
+<%= primary_button "New Container", new_container_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @containers %>
+  </tbody>
+</table>

@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to container, container %></td>
+  <td><%= state_badge(container) %></td>
+  <td>
+    <%= stop_start_button(container) %>
+    <%= danger_button "Delete", container_path(container), method: :delete %>
+  </td>
+</tr>
