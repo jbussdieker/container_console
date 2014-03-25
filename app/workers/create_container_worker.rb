@@ -4,6 +4,7 @@ class CreateContainerWorker
   def perform(name, options)
     lxc = LXC.new
     @container = LXC::Container.new(lxc: lxc, name: name)
-    @container.create(options)
+    result = @container.create(options)
+    logger.error result
   end
 end

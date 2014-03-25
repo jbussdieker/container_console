@@ -6,10 +6,15 @@ class Container
       @params = container
     else
       @params = {
-        :name => container.try(:name)
+        :name => container.try(:name),
+        :template => "ubuntu"
       }
       @container = container
     end
+  end
+
+  def template
+    @params[:template]
   end
 
   def name
@@ -36,7 +41,7 @@ class Container
     if persisted?
       false
     else
-      CreateContainerWorker.perform_async(name, "-t ubuntu")
+      CreateContainerWorker.perform_async(name, "-t #{template}")
     end
   end
 
